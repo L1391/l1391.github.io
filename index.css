@@ -1,0 +1,101 @@
+        /* import font */
+       @font-face {
+            font-family: pixel-font;
+            src: url("pixel-font.otf") format("opentype");
+        }
+
+        /* background animation */
+        @keyframes rainbow {
+            0%   {background-color:palevioletred;}
+            20%  {background-color: lightpink;}
+            40%  {background-color:palegreen; }
+            60%  {background-color:paleturquoise; }
+            80% {background-color:lavender;}
+            100% {background-color: lightcyan;}
+        }
+
+        /* dood animations */
+        @keyframes jumpspin {
+            0% {top: 0px; transform: rotate(0deg);}
+            50% {top: 50%; transform: rotate(180deg);}
+            100% {top: 0px; transform: rotate(360deg);}
+        }
+
+        @keyframes jumpwobble {
+            0% {top: 520px; transform: rotate(0deg);}
+            20% {top: 520px; transform: rotate(0deg);}
+            40% {top: 50%; transform: rotate(0deg);}
+            45% {top: 50%; transform: rotate(-20deg);}
+            55% {top: 50%; transform: rotate(20deg);}
+            60% {top: 50%; transform: rotate(0deg);}
+            80% {top: 520px; transform: rotate(0deg);}
+            100% {top: 520px; transform: rotate(0deg);}
+        }
+
+        #dood1 {
+            width: 80px;
+            position: absolute;
+            float: inline-start;
+            margin-left: -100px;
+            animation: jumpspin 3.3s ease 0.2s infinite;
+        }
+
+        #dood2 {
+            top: 520px;
+            width: 80px;
+            position: relative;
+            float: inline-end;
+            margin-right: -100px;
+            animation: jumpwobble 4s ease 0.3s infinite alternate;
+        }
+
+        html{
+            overflow: hidden;
+            font-family: pixel-font;
+            width:100%;
+            height:100%;
+            animation: rainbow 10s linear 0s infinite alternate-reverse;
+        }
+
+        h1 {
+            font-size: 48px;
+        }
+
+        .page {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            top: 0px;
+            background-color: rgba(204, 255, 153, 0.8);
+            border: 3px solid black; 
+        }
+
+        .padding {
+            padding: 20px;
+        }
+
+        #main {
+            position: relative;
+            width: 600px;
+            height: 600px;
+            margin: auto;
+        }
+
+        #screen {
+            border: 3px solid black; 
+            margin: 0px auto; 
+            position: relative;
+            background-color: white;
+        }
+
+        #tutorial {
+            width: 80%;
+            text-align: center;
+            margin: 10px auto;
+        }
+
+        #footer {
+            width: 80%;
+            text-align: center;
+            margin: 10px auto;
+        }
