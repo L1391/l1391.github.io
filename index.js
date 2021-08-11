@@ -16,7 +16,7 @@ var yvel = 0;
 
 var collided = true;
 
-var keys = {"w": false, "a": false, "d":false};
+var keys = {38: false, 37: false, 39:false};
 
 //create charcter div
 let character = document.createElement("div");
@@ -32,12 +32,12 @@ screen.appendChild(character);
 //attach keyboard control events
 document.addEventListener("keydown", function(e) {
     e.preventDefault();
-    keys[e.key] = true;
+    keys[e.keyCode] = true;
 });
 
 document.addEventListener("keyup", function(e) {
     e.preventDefault();
-    keys[e.key] = false;
+    keys[e.keyCode] = false;
 })
 
 //class for text that acts as platform for character
@@ -80,6 +80,44 @@ class Text {
     }
 }
 
+class Slider {
+    constructor(element, width, height) {
+        this.element = element;
+        this.element.style.position = "absolute";
+        this.element.style.zIndex = 0;
+
+        this.width = width;
+        this.height = height;
+        this.element.style.width = width + "px";
+        this.element.style.height = height + "px";
+
+        this.speed = 0;
+        this.x = 0;
+        this.y = 0;
+        this.spawn();
+    }
+
+    spawn() {
+        this.x = -this.width;
+        this.y = Math.random()*(window.innerHeight + this.height)-this.height;
+        this.speed = Math.random()*2;
+    }
+
+    move() {
+        this.element.style.left = this.x + "px";
+        this.element.style.top = this.y + "px";
+
+        this.x = this.x + this.speed;
+        if (this.x > window.innerWidth) this.spawn();
+    }
+}
+
+var bgdoods = document.getElementsByClassName("bgdood");
+bgdoods = [...bgdoods];
+bgdoods = bgdoods.map((n) => new Slider(n, 300, 200));
+console.log(bgdoods);
+
+
 //create text instances
 var texts = [
     new Text("ABOUT", 80, 80, true, "about"),
@@ -91,6 +129,10 @@ var texts = [
 requestAnimationFrame(frame); 
 
 function frame() {
+    for(let dood of bgdoods) {
+        dood.move();
+     }
+
     updateY();
     updateX();
 
@@ -105,7 +147,7 @@ function frame() {
 //check y position bounds, collisions, and key presses
 function updateY() {
     //quick acceleration upwards
-    if (keys["w"] && collided) {
+    if (keys[38] && collided) {
         yvel += 25;
         collided = false;
     }
@@ -142,9 +184,9 @@ function updateCollision(textObject) {
 //check x position bounds and key presses
 function updateX() {
     //accelerate when key press
-    if (keys["a"]) {
+    if (keys[37]) {
         xvel -= 0.8;
-    } else if (keys["d"]) {
+    } else if (keys[39]) {
         xvel += 0.8;
     }
 
@@ -161,3 +203,5 @@ function updateX() {
 
     character.style.left = xpos + "px";
 }
+
+
