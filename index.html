@@ -1,54 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Hello my name is Lindsey</title>
-    <link rel="stylesheet" href="index.css">
-</head>
-<body>
-    <!--Background doodles-->
-    <img class="bgdood" src="images/backgrounddoodle1.png"/>
-    <img class="bgdood" src="images/backgrounddoodle2.png"/>
-    <img class="bgdood" src="images/backgrounddoodle3.png"/>                
-    <img class="bgdood" src="images/backgrounddoodle4.png" />
-    <img class="bgdood" src="images/backgrounddoodle5.png" />
-
-    <h2 id="tutorial">Navigate my website using the arrow keys</h2>
-
-    <div id="main">
-        <!--Floating doodles-->
-        <img id="dood1" src="images/dood1.png"/>
-        <img id="dood2" src="images/dood2.png"/>
-
-        <!--Game screen-->
-        <div id="screen" style="width: 600px; height: 600px;"></div>
-
-        <!--Website pages-->
-        <div class="page" id="about">
-            <div class="padding">
-                <h1>Hello, my name is Lindsey</h1>
-                <p>I am a creator having fun and wanting to help people with technology.</p>
-                <p>I am a student at Swarthmore College, probably pursuing engineering.</p>
-                <p>I like to doodle, if that wasn't already apparent.</p>
-                <p>How are you doing today? (This is not small talk, really how are you today?)</p>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
+        <title>Hello my name is Lindsey</title>
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+        <div id="character"></div>
+        <div id="mobile-controls" >
+            <div id="mobile-left-button" style="display: none;">&lsaquo;</div>
+            <div id="mobile-jump-button" style="display: none;">^</div>
+            <div id="mobile-right-button" style="display: none;">&rsaquo;</div>
+        </div>
+        <div id="main-page">
+            <div id="welcome" class="tab">
+                <div id="welcome-header" class="platform">HELLO, MY NAME IS LINDSEY</div>
+                <div id="tutorial"> Use the arrow keys or tilt your phone to navigate </div>
+            </div>
+            <div id="values" class="tab">
+                <div id="values-header" class="platform left">MY VALUES</div>
+                <div class="content right">
+                    <p>I took time to reflect one night and decided these are at the core of how I think and act</p>
+                    <p>Integrity ~ Local Community/Relationships ~ Simplicity ~ Forgiveness ~ Reflection</p>
+                </div>
+            </div>
+            <div id="dos" class="tab">
+                <div id="dos-header" class="platform right">DID,DOING,WILL DO</div>
+                <div class="content left">
+                    <p>CV coming soon!</p>
+                    <p>DID: Varsity Cross Country,  <a target="_blank" href="https://www.metalmoose1391.org/">FRC Robotics</a>, HSK 3,  <a target="_blank" href="https://proveitmath.org/">Prove it! Math Academy</a>,  <a target="_blank" href="https://play.google.com/store/apps/details?id=com.ulend.hotels&gl=US">U-Lend Umbrellas App Development</a>,  <a target="_blank" href="https://www.swarthmore.edu/new-students/summer-social-justice-institute">SSJI</a></p>
+                    <p>DOING: Dietary Associate at local senior center, Ultimate Frisbee,  <a target="_blank" href="fossils/index.html">Fossil Hunting</a></p>
+                    <p>WILL DO:  <a target="_blank" href="https://www.middlebury.edu/language-schools/languages/chinese/immersion">Middlebury Language Immersion School</a>,  <a target="_blank" href="https://scholarship.tricolib.brynmawr.edu/handle/10066/22936">Aquaponics Research</a></p>
+                </div> 
+            </div>
+            <div id="academics" class="tab">
+                <div id="academics-header" class="platform left">ACADEMICS</div>
+                <div class="content right">
+                    <p>Swarthmore College 2021-2025 ~ BS Engineering</p>
+                    <p>Notable courses: Electrical Circuit Analysis, Semantics, Mechanics, Intro to Classical Chinese</p>
+                    <p>Westtown School 2018-2021 ~ Highschool Diploma</p>
+                    <p>Notable courses: Design & Engineering 1 and 2, Adv Calculus 1 and 2, Adv Linear Algebra, Adv Multivariable Calculus, Adv Religion, Resistance, & Revolution</p>
+                </div>
+            </div>
+            <div id="interests" class="tab">
+                <div id="interests-header" class="platform right">INTERESTS</div>
+                <div class="content left">
+                    <p>programming ~ I have worked with HTML, CSS, JavaScript, PHP, SQL, Java, Python, C++ (Arduino), and Flutter for various projects. Check out some work on  <a target="_blank" href="https://github.com/L1391/">my Github</a></p>
+                    <p>art ~ I am a doodler, creative compiler.  <a target="_blank" href="art/index.html">Check out my stuff</a></p>
+                    <p>nature and the environment ~ </p>
+                    <p>running ~ After competing in highschool XC, I am still an avid long-distance runner. I love using it as a way to get outside and exploring the places around me</p>
+                    <p>philosophy ~ I love to think about and question everything. While I don't intent on any academic pursuits, I hope to incorperate active and analysis and reasoning into my daily life</p>
+                    <p>puzzles ~ I like crosswords, cryptograms, rush hour, and of course jigsaw puzzles. My favorite jigsaws are by Jon Burgerman</p>
+                    <p>languages ~ Languages are how we connect with people, which is why I find them so important. I have been learning 中文 and Türkçe, and know bits and pieces of ASL and -- --- .-. ... .</p>
+                    <p>exploring ~ I am curious and persistant, and I want to see the world</p>
+                </div>
+            </div>
+            <div id="favorites" class="tab">
+                <div id="favorites-header" class="platform left">FAVORITES</div>
+                <div class="content right">
+                    <p>Online:  <a target="_blank" href="https://mitadmissions.org/blogs/">MIT Blogs</a>,  <a target="_blank" href="https://www.youtube.com/c/MontereyBayAquarium">Monteray Bay Aquarium Livestreams</a></p>
+                    <p>People:  <a target="_blank" href="https://mayaontheinter.net/">Maya Man</a>,  <a target="_blank" href="https://chellaman.com/">Chella Man</a>,  <a target="_blank" href="https://www.youtube.com/channel/UCcXhhVwCT6_WqjkEniejRJQ">Martin Mollin (Wintergatan)</a>,  <a target="_blank" href="https://www.youtube.com/channel/UC3KEoMzNz8eYnwBC34RaKCQ">Simone Giertz</a></p>
+                    <p>Books: Numbers Don't Lie by Vinclav Smil, We Are the Ants by Josh David Hutchinson, The Future We Choose by Christiana Figueres and Tom Rivett-Carnec</p>
+                    <p>Texts:  <a target="_blank" href="https://libcom.org/article/patriotism-and-government-leo-tolstoy">Leo Tolstoy on Patriotism</a>,  <a target="_blank" href="https://en.wikiquote.org/wiki/Discourse_on_Inequality">Rousseau's Discourse on Inequality</a></p>
+                    <p>Music: Superorganism, Noah Finnce, Conan Gray, Clairo</p>
+                </div>
+            </div>
+            <div id="explorations" class="tab">
+                <div id="explorations-header" class="platform right">EXPLORATIONS</div>
+                <div class="content left">
+                    <!--Generated by JS-->
+                </div>
+            </div>
+            <div id="contact" class="tab">
+                <div id="contact-header" class="platform left">CONTACT</div>
+                <div class="content right">
+                    <p>Now that you know me, I want to know you</p>
+                    <p>I do not use social media, email me at  <a target="_blank" href="mailto:lindseyjturn@gmail.com">lindseyjturn@gmail.com</a></p>
+                </div>
             </div>
         </div>
-        <div class="page" id="projects">
-            <div class="padding">
-                <h1>What have I been up to?</h1>
-                <p>Take a trip to <a href="https://github.com/L1391">Github</a>. Repositories include FRC robot code, p5.js games, and HTML shenanigans.</p>
-                <p>Need to <a href="https://www.ulendumbrellas.com/">borrow an umbrella?</a> Check out the startup I've coded for.</p>
-            </div>
-        </div>
-        <div class="page" id="contact">
-            <div class="padding">
-                <h1>Send me something</h1>
-                <p>I do not have social media, so please contact me through <a href="mailto:lindseyjturn@gmail.com">email</a>.</p>
-            </div>
-        </div>
-    </div>
+    </body>
+    <div id="footer">© 2022 Lindsey Turner ~  <a target="_blank" href="old/index.html">archived version</a></div>
+    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="posts.js"></script>
 
-    <p id="footer">© 2021 Lindsey Turner. Font credit to <a href="https://www.fontspace.com/connection-ii-font-f31971">KineticPlasma Fonts</a></p>
-    <script src="index.js"></script>
-</body>
 </html>
