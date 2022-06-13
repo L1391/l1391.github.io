@@ -50,21 +50,21 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 }
 
 #mobile-jump-button {
-    width: 30%;
+    width: 10%;
     height: 50px;
     background-color: lightslategrey;
     border: solid 3px black;
 }
 
 #mobile-left-button {
-    width: 30%;
+    width: 10%;
     height: 50px;
     background-color: lightslategrey;
     border: solid 3px black;
 }
 
 #mobile-right-button {
-    width: 30%;
+    width: 10%;
     height: 50px;
     background-color: lightslategrey;
     border: solid 3px black;
@@ -150,6 +150,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     }
 
     .content {
+        font-size: 8px;
         position: absolute;
         top: auto;
         bottom: 20%;
@@ -159,7 +160,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     .platform {
         position: absolute;
         text-align: center;
-        font-size: 36px;
+        font-size: 30px;
         bottom: 10%;
         max-width: 60%;
         overflow-wrap: break-word;

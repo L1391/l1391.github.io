@@ -26,7 +26,7 @@ document.body.onload = function() {
     if (isMobile) {
 
         requestDeviceOrientation(function(err) {
-            if (err == null) {
+            //if (err == null) {
                 window.addEventListener('deviceorientation',(e) => {
                     console.log("event" + e.gamma);
                     if (e.gamma > 15) {
@@ -41,7 +41,7 @@ document.body.onload = function() {
                         keys[39] = false;
                     }
                 }, true);
-            } else {
+            //} else {
                 let leftButton = document.getElementById("mobile-left-button");
                 leftButton.style.display = "inline-block";
         
@@ -54,7 +54,7 @@ document.body.onload = function() {
                     keys[37] = false;
                 };
 
-                let  rightButton = document.getElementById("mobile-left-button");
+                let  rightButton = document.getElementById("mobile-right-button");
                  rightButton.style.display = "inline-block";
         
                  rightButton.ontouchstart = function() {
@@ -66,7 +66,7 @@ document.body.onload = function() {
                     keys[39] = false;
                 };
                 
-            }
+            //}
         });
 
         let jumpButton = document.getElementById("mobile-jump-button");
