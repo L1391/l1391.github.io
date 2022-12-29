@@ -147,21 +147,40 @@ document.body.onload = function() {
         }
     }, true);
 
+    var scrollMode = false;
+
+    let scrollModeButton = document.getElementById("scroll-mode");
+    scrollModeButton.checked = scrollMode;
+
+    //check scroll mode
+    scrollModeButton.addEventListener("change", function(e) {
+
+        scrollMode = scrollModeButton.checked;
+    });
+
     //start frames for character movement
     requestAnimationFrame(frame); 
 
     function frame() {
 
-        //physics updates
-        updateY();
-        updateX();
+        if (!scrollMode) {
+            //physics updates
+            updateY();
+            updateX();
 
-        for(let platform of platforms) {
-            updateCollision(platform);
+            for(let platform of platforms) {
+                updateCollision(platform);
+            }
+
+            //screen follows character
+            window.scrollTo(0,bodyHeight - ypos - window.screen.availHeight/2);
+
+        } else {
+            yvel = 0;
+            xvel = 0;
+
+            character.style.bottom = bodyHeight - window.screen.scrollY - window.screen.availHeight/2;
         }
-
-        //screen follows character
-        window.scrollTo(0,bodyHeight - ypos - window.screen.availHeight/2);
 
         //request the next frame
         requestAnimationFrame(frame); 

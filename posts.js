@@ -1,6 +1,8 @@
 const postTitles = [
     "hdiiwmf ~ socializing in college",
-    //"praise and blame",
+    "praise and blame",
+    "on comparison",
+    "what is wasted?",
     "",
 ];
 
