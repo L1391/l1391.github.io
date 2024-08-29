@@ -12,13 +12,13 @@ const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 let subbutton = document.getElementById("subscribe-button");
 
 subbutton.addEventListener("click", async function() {
-    let email = document.getElementById('email-text').value;
+    let sub_email = document.getElementById('email-text').value;
     let notifier = document.getElementById("form-notifier");
 
-    if (email.includes("@") && email.includes(".") && email.length > 5){
+    if (sub_email.includes("@") && sub_email.includes(".") && sub_email.length > 5){
         const data = await _supabase
         .from('subscribers')
-        .insert([ {email}]);
+        .insert([ {sub_email}]);
 
         console.log(data);
 
