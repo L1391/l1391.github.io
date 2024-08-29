@@ -3,41 +3,6 @@
 
 document.body.onload = function() {
 
-// email subscription
-const SUPABASE_URL = 'https://vhncezbspfetgozdumhv.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZobmNlemJzcGZldGdvemR1bWh2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjQ4NzQ5MTQsImV4cCI6MjA0MDQ1MDkxNH0.Lj6tgLO9_iTw2Ydtzk8zzrM7bPh11kz0pwkP06KXMFg';
-
-const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-
-let subbutton = document.getElementById("subscribe-button");
-
-subbutton.addEventListener("click", async function() {
-    let sub_email = document.getElementById('email-text').value;
-    let notifier = document.getElementById("form-notifier");
-
-    if (sub_email.includes("@") && sub_email.includes(".") && sub_email.length > 5){
-        const data = await _supabase
-        .from('subscribers')
-        .insert([ {sub_email}]);
-
-        console.log(data);
-
-            if (data != null && data.status == 201) {
-                notifier.innerText = "Successfully subscribed, check your email to verify the correct email was inputed";
-            } else if (data.status == 409) {
-                notifier.innerText = "Oops! You've already subscribed with this email";
-            }
-            else {
-                notifier.innerText = "Error on the server! Apologies :(";
-            }
-    
-    } else {
-        notifier.innerText = "Error! Not a valid email";
-    }
-
-});
-
-
 /** PLAYABLE UX*/
     const isMobile =  (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
     (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform)));
